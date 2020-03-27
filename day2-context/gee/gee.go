@@ -37,6 +37,6 @@ func (engine *Engine) Run(addr string) (err error) {
 }
 
 func (engine Engine) ServeHTTP(w http.ResponseWriter, req *http.Request) {
-	c := newConetext(w, req)
+	c := newContext(w, req)
 	engine.router.handle(c)
 }
